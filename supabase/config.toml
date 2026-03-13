@@ -1,0 +1,4 @@
+project_id = "jesjxgiosnhwppjabmia"
+
+[functions.gita-chat]
+verify_jwt = false

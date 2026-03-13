@@ -9,6 +9,8 @@ import SandhiLab from "./pages/SandhiLab";
 import CompilerPage from "./pages/CompilerPage";
 import GalleryPage from "./pages/GalleryPage";
 import WisdomPage from "./pages/WisdomPage";
+import SanskritHelpPage from "./pages/SanskritHelpPage";
+import GuidePage from "./pages/GuidePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/compiler" element={<CompilerPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/wisdom" element={<WisdomPage />} />
+          <Route path="/help" element={<SanskritHelpPage />} />
+          <Route path="/guide" element={<GuidePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

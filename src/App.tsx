@@ -28,6 +28,8 @@ const App = () => (
           <Route path="/compiler" element={<CompilerPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/wisdom" element={<WisdomPage />} />
+          <Route path="/help" element={<SanskritHelpPage />} />
+          <Route path="/guide" element={<GuidePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

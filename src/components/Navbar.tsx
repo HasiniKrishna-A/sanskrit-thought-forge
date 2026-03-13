@@ -7,6 +7,8 @@ const NAV_ITEMS = [
   { path: "/compiler", label: "Compiler", devanagari: "संकलकः" },
   { path: "/gallery", label: "Shloka Art", devanagari: "श्लोकचित्रम्" },
   { path: "/wisdom", label: "Wisdom", devanagari: "प्रज्ञा" },
+  { path: "/help", label: "Help Bot", devanagari: "सहायकः" },
+  { path: "/guide", label: "Guide", devanagari: "पथदर्शिका" },
 ];
 
 const Navbar = () => {

@@ -11,6 +11,7 @@ import GalleryPage from "./pages/GalleryPage";
 import WisdomPage from "./pages/WisdomPage";
 import SanskritHelpPage from "./pages/SanskritHelpPage";
 import GuidePage from "./pages/GuidePage";
+import PracticePage from "./pages/PracticePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/wisdom" element={<WisdomPage />} />
           <Route path="/help" element={<SanskritHelpPage />} />
           <Route path="/guide" element={<GuidePage />} />
+          <Route path="/practice" element={<PracticePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

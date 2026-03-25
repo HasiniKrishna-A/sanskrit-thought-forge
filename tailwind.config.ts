@@ -7,7 +7,7 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
         "2xl": "1400px",
       },
@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Space Grotesk", "sans-serif"],
+        display: ["Playfair Display", "serif"],
         devanagari: ["Noto Serif Devanagari", "serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
@@ -55,6 +56,10 @@ export default {
         sanskrit: "hsl(var(--sanskrit))",
         vedic: "hsl(var(--vedic))",
         manuscript: "hsl(var(--manuscript))",
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

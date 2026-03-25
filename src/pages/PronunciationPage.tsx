@@ -299,8 +299,8 @@ const PronunciationPage = () => {
 
                 <Button
                   size="lg"
-                  disabled={isListening || !feedback || feedback.score !== -1 || !feedback.transcript}
-                  onClick={() => feedback?.transcript && analyzePronunciation(feedback.transcript)}
+                  disabled={isListening || !recordedTranscript || (feedback !== null && feedback.score !== -1)}
+                  onClick={() => recordedTranscript && analyzePronunciation(recordedTranscript)}
                   className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-primary/20"
                 >
                   <CheckCircle2 className="w-5 h-5" />

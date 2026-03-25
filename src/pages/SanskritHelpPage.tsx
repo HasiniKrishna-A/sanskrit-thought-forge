@@ -41,9 +41,7 @@ const SanskritHelpPage = () => {
     };
 
     try {
-      const { data: { publicUrl } } = supabase.storage.from("dummy").getPublicUrl("");
-      const baseUrl = publicUrl.replace("/storage/v1/object/public/dummy/", "");
-      const url = `${baseUrl}/functions/v1/sanskrit-help`;
+      const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/sanskrit-help`;
 
       const resp = await fetch(url, {
         method: "POST",

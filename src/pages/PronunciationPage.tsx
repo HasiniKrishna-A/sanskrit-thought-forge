@@ -315,7 +315,9 @@ const PronunciationPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     className={`rounded-2xl p-6 border ${
-                      feedback.score >= 80
+                      feedback.score === -1
+                        ? "bg-muted/10 border-border/30"
+                        : feedback.score >= 80
                         ? "bg-green-500/5 border-green-500/20"
                         : feedback.score >= 50
                         ? "bg-primary/5 border-primary/20"

@@ -393,7 +393,7 @@ const PronunciationPage = () => {
 
               {/* Navigation */}
               <div className="flex justify-between mt-8 pt-6 border-t border-border/20">
-                <Button variant="ghost" size="sm" onClick={() => { setFeedback(null); setShowTips(false); }} className="gap-2">
+                <Button variant="ghost" size="sm" onClick={() => { setFeedback(null); setRecordedTranscript(null); setShowTips(false); }} className="gap-2">
                   <RotateCcw className="w-3.5 h-3.5" />
                   Reset
                 </Button>

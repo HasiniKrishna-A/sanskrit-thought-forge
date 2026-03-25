@@ -325,7 +325,9 @@ const PronunciationPage = () => {
                     }`}
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      {feedback.score >= 80 ? (
+                      {feedback.score === -1 ? (
+                        <Mic className="w-6 h-6 text-primary" />
+                      ) : feedback.score >= 80 ? (
                         <CheckCircle2 className="w-6 h-6 text-green-400" />
                       ) : feedback.score >= 50 ? (
                         <AlertCircle className="w-6 h-6 text-primary" />
@@ -333,8 +335,15 @@ const PronunciationPage = () => {
                         <XCircle className="w-6 h-6 text-destructive" />
                       )}
                       <div>
-                        <span className="text-2xl font-bold text-foreground">{feedback.score}%</span>
-                        <span className="text-xs text-muted-foreground ml-2">accuracy</span>
+                        {feedback.score >= 0 && (
+                          <>
+                            <span className="text-2xl font-bold text-foreground">{feedback.score}%</span>
+                            <span className="text-xs text-muted-foreground ml-2">accuracy</span>
+                          </>
+                        )}
+                        {feedback.score === -1 && (
+                          <span className="text-sm font-medium text-foreground">Voice recorded</span>
+                        )}
                       </div>
                     </div>
                     {feedback.transcript && (

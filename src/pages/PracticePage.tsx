@@ -63,7 +63,6 @@ const PracticePage = () => {
         p.completedChallenges.push(todayStr);
         p.totalChallengesCompleted += 1;
       }
-      const { saveProgress } = require("@/lib/gamification");
       saveProgress(p);
       setProgress(p);
       setCompleted(true);

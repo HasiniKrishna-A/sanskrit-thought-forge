@@ -151,6 +151,7 @@ const PronunciationPage = () => {
 
     recognition.onresult = (event: any) => {
       const transcript = event.results[0][0].transcript;
+      setRecordedTranscript(transcript);
       setFeedback({ score: -1, transcript, details: ["Recording captured ✓ Press Check to analyze."] });
       setIsListening(false);
     };

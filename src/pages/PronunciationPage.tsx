@@ -82,6 +82,7 @@ const PronunciationPage = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isListening, setIsListening] = useState(false);
   const [feedback, setFeedback] = useState<FeedbackState>(null);
+  const [recordedTranscript, setRecordedTranscript] = useState<string | null>(null);
   const [showTips, setShowTips] = useState(false);
   const recognitionRef = useRef<any>(null);
 
@@ -150,6 +151,7 @@ const PronunciationPage = () => {
 
     recognition.onresult = (event: any) => {
       const transcript = event.results[0][0].transcript;
+      setRecordedTranscript(transcript);
       setFeedback({ score: -1, transcript, details: ["Recording captured ✓ Press Check to analyze."] });
       setIsListening(false);
     };
@@ -168,8 +170,9 @@ const PronunciationPage = () => {
     recognitionRef.current = recognition;
     recognition.start();
     setIsListening(true);
+    setRecordedTranscript(null);
     setFeedback(null);
-  }, [analyzePronunciation]);
+  }, []);
 
   const stopListening = useCallback(() => {
     recognitionRef.current?.stop();
@@ -179,6 +182,7 @@ const PronunciationPage = () => {
   const nextPhrase = () => {
     setCurrentPhraseIndex(prev => (prev + 1) % filteredPhrases.length);
     setFeedback(null);
+    setRecordedTranscript(null);
     setShowTips(false);
   };
 
@@ -295,8 +299,8 @@ const PronunciationPage = () => {
 
                 <Button
                   size="lg"
-                  disabled={isListening || !feedback || feedback.score !== -1 || !feedback.transcript}
-                  onClick={() => feedback?.transcript && analyzePronunciation(feedback.transcript)}
+                  disabled={isListening || !recordedTranscript || (feedback !== null && feedback.score !== -1)}
+                  onClick={() => recordedTranscript && analyzePronunciation(recordedTranscript)}
                   className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-primary/20"
                 >
                   <CheckCircle2 className="w-5 h-5" />
@@ -389,7 +393,7 @@ const PronunciationPage = () => {
 
               {/* Navigation */}
               <div className="flex justify-between mt-8 pt-6 border-t border-border/20">
-                <Button variant="ghost" size="sm" onClick={() => { setFeedback(null); setShowTips(false); }} className="gap-2">
+                <Button variant="ghost" size="sm" onClick={() => { setFeedback(null); setRecordedTranscript(null); setShowTips(false); }} className="gap-2">
                   <RotateCcw className="w-3.5 h-3.5" />
                   Reset
                 </Button>

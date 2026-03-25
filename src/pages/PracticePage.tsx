@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Flame, Trophy, Zap, Star, Check, X, ArrowRight, RotateCcw } from "lucide-react";
 import {
-  loadProgress, addXp, getDailyChallenges, getXpForNextLevel, getLevelTitle,
+  loadProgress, saveProgress, addXp, getDailyChallenges, getXpForNextLevel, getLevelTitle,
   type Challenge, type UserProgress
 } from "@/lib/gamification";
 

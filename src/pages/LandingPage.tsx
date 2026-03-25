@@ -198,13 +198,22 @@ const LandingPage = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {FEATURES.map(feature => (
-            <motion.div key={feature.path} variants={item}>
+            <motion.div key={feature.path} variants={item} className={(feature as any).highlighted ? "md:col-span-2 lg:col-span-3" : ""}>
               <Link
                 to={feature.path}
-                className="group block p-6 rounded-2xl glass-card-hover h-full"
+                className={`group block p-6 rounded-2xl glass-card-hover h-full ${
+                  (feature as any).highlighted
+                    ? "relative overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-vedic/5"
+                    : ""
+                }`}
               >
+                {(feature as any).highlighted && (
+                  <span className="absolute top-3 right-3 px-3 py-0.5 rounded-full bg-primary/15 text-primary text-[10px] font-mono uppercase tracking-widest border border-primary/20">
+                    ✨ New
+                  </span>
+                )}
                 <div className={`inline-flex p-2.5 rounded-xl ${feature.iconBg} mb-4`}>
-                  <feature.icon className="w-5 h-5 text-primary" />
+                  <feature.icon className={`w-5 h-5 ${(feature as any).highlighted ? "text-vedic" : "text-primary"}`} />
                 </div>
                 <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
                   {feature.title}

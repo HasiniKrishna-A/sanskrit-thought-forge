@@ -182,6 +182,7 @@ const PronunciationPage = () => {
   const nextPhrase = () => {
     setCurrentPhraseIndex(prev => (prev + 1) % filteredPhrases.length);
     setFeedback(null);
+    setRecordedTranscript(null);
     setShowTips(false);
   };
 

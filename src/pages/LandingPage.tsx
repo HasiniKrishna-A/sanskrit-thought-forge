@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Code, Combine, BookOpen, MessageCircle, Sparkles, GraduationCap, Flame, Trophy } from "lucide-react";
+import { ArrowRight, Code, Combine, BookOpen, MessageCircle, Sparkles, GraduationCap, Flame, Trophy, Mic } from "lucide-react";
 
 const FEATURES = [
   {

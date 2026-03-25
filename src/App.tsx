@@ -33,6 +33,7 @@ const App = () => (
           <Route path="/help" element={<SanskritHelpPage />} />
           <Route path="/guide" element={<GuidePage />} />
           <Route path="/practice" element={<PracticePage />} />
+          <Route path="/pronounce" element={<PronunciationPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

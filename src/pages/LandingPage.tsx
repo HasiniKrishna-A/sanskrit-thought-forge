@@ -57,6 +57,16 @@ const FEATURES = [
     accent: "from-primary/15 to-secondary/15",
     iconBg: "bg-primary/10",
   },
+  {
+    icon: Mic,
+    title: "Pronunciation Checker",
+    devanagari: "उच्चारण परीक्षकः",
+    description: "Speak Sanskrit phrases aloud and get instant AI feedback on your pronunciation. Master the sounds of the Devavāṇī.",
+    path: "/pronounce",
+    accent: "from-vedic/20 to-primary/15",
+    iconBg: "bg-vedic/15",
+    highlighted: true,
+  },
 ];
 
 const STATS = [

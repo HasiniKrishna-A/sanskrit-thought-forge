@@ -186,7 +186,7 @@ const LandingPage = () => {
             Everything you need to master <span className="text-gradient-gold">Sanskrit</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Six powerful tools, one beautiful platform. From beginner to scholar.
+            Seven powerful tools, one beautiful platform. From beginner to scholar.
           </p>
         </motion.div>
 

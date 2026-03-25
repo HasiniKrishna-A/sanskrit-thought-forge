@@ -82,6 +82,7 @@ const PronunciationPage = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isListening, setIsListening] = useState(false);
   const [feedback, setFeedback] = useState<FeedbackState>(null);
+  const [recordedTranscript, setRecordedTranscript] = useState<string | null>(null);
   const [showTips, setShowTips] = useState(false);
   const recognitionRef = useRef<any>(null);
 

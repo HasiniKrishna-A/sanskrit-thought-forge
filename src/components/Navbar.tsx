@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { path: "/help", label: "Grammar Bot", devanagari: "व्याकरणम्" },
   { path: "/guide", label: "Guide", devanagari: "पथम्" },
   { path: "/practice", label: "Practice", devanagari: "अभ्यासः" },
+  { path: "/pronounce", label: "Pronounce", devanagari: "उच्चारणम्" },
 ];
 
 const Navbar = () => {

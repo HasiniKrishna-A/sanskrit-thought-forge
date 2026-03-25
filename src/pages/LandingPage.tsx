@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Code, Combine, BookOpen, MessageCircle, Sparkles, GraduationCap, Flame, Trophy } from "lucide-react";
+import { ArrowRight, Code, Combine, BookOpen, MessageCircle, Sparkles, GraduationCap, Flame, Trophy, Mic } from "lucide-react";
 
 const FEATURES = [
   {
@@ -56,6 +56,16 @@ const FEATURES = [
     path: "/practice",
     accent: "from-primary/15 to-secondary/15",
     iconBg: "bg-primary/10",
+  },
+  {
+    icon: Mic,
+    title: "Pronunciation Checker",
+    devanagari: "उच्चारण परीक्षकः",
+    description: "Speak Sanskrit phrases aloud and get instant AI feedback on your pronunciation. Master the sounds of the Devavāṇī.",
+    path: "/pronounce",
+    accent: "from-vedic/20 to-primary/15",
+    iconBg: "bg-vedic/15",
+    highlighted: true,
   },
 ];
 
@@ -176,7 +186,7 @@ const LandingPage = () => {
             Everything you need to master <span className="text-gradient-gold">Sanskrit</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Six powerful tools, one beautiful platform. From beginner to scholar.
+            Seven powerful tools, one beautiful platform. From beginner to scholar.
           </p>
         </motion.div>
 
@@ -188,13 +198,22 @@ const LandingPage = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {FEATURES.map(feature => (
-            <motion.div key={feature.path} variants={item}>
+            <motion.div key={feature.path} variants={item} className={(feature as any).highlighted ? "md:col-span-2 lg:col-span-3" : ""}>
               <Link
                 to={feature.path}
-                className="group block p-6 rounded-2xl glass-card-hover h-full"
+                className={`group block p-6 rounded-2xl glass-card-hover h-full ${
+                  (feature as any).highlighted
+                    ? "relative overflow-hidden border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-vedic/5"
+                    : ""
+                }`}
               >
+                {(feature as any).highlighted && (
+                  <span className="absolute top-3 right-3 px-3 py-0.5 rounded-full bg-primary/15 text-primary text-[10px] font-mono uppercase tracking-widest border border-primary/20">
+                    ✨ New
+                  </span>
+                )}
                 <div className={`inline-flex p-2.5 rounded-xl ${feature.iconBg} mb-4`}>
-                  <feature.icon className="w-5 h-5 text-primary" />
+                  <feature.icon className={`w-5 h-5 ${(feature as any).highlighted ? "text-vedic" : "text-primary"}`} />
                 </div>
                 <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
                   {feature.title}

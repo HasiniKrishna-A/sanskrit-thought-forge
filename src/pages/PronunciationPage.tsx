@@ -268,12 +268,12 @@ const PronunciationPage = () => {
                 </Button>
               </div>
 
-              {/* Mic button */}
-              <div className="flex justify-center mb-6">
+              {/* Mic & Check buttons */}
+              <div className="flex justify-center items-center gap-4 mb-6">
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={isListening ? stopListening : startListening}
-                  className={`relative w-24 h-24 rounded-full flex items-center justify-center transition-all ${
+                  className={`relative w-20 h-20 rounded-full flex items-center justify-center transition-all ${
                     isListening
                       ? "bg-destructive/20 border-2 border-destructive shadow-lg shadow-destructive/20"
                       : "bg-primary/10 border-2 border-primary/30 hover:border-primary hover:shadow-lg hover:shadow-primary/20"
@@ -287,14 +287,24 @@ const PronunciationPage = () => {
                     />
                   )}
                   {isListening ? (
-                    <MicOff className="w-8 h-8 text-destructive" />
+                    <MicOff className="w-7 h-7 text-destructive" />
                   ) : (
-                    <Mic className="w-8 h-8 text-primary" />
+                    <Mic className="w-7 h-7 text-primary" />
                   )}
                 </motion.button>
+
+                <Button
+                  size="lg"
+                  disabled={isListening || !feedback?.transcript}
+                  onClick={() => feedback?.transcript && analyzePronunciation(feedback.transcript)}
+                  className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-primary/20"
+                >
+                  <CheckCircle2 className="w-5 h-5" />
+                  Check
+                </Button>
               </div>
               <p className="text-center text-xs text-muted-foreground mb-6">
-                {isListening ? "Listening... speak now" : "Tap to start speaking"}
+                {isListening ? "Listening... speak now" : "Record your voice, then press Check"}
               </p>
 
               {/* Feedback */}

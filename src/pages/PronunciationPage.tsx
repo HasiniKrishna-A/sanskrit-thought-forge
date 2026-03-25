@@ -170,8 +170,9 @@ const PronunciationPage = () => {
     recognitionRef.current = recognition;
     recognition.start();
     setIsListening(true);
+    setRecordedTranscript(null);
     setFeedback(null);
-  }, [analyzePronunciation]);
+  }, []);
 
   const stopListening = useCallback(() => {
     recognitionRef.current?.stop();

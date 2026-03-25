@@ -12,6 +12,7 @@ import WisdomPage from "./pages/WisdomPage";
 import SanskritHelpPage from "./pages/SanskritHelpPage";
 import GuidePage from "./pages/GuidePage";
 import PracticePage from "./pages/PracticePage";
+import PronunciationPage from "./pages/PronunciationPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
